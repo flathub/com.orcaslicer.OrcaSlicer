@@ -15,7 +15,7 @@ build-options:
     CXX: clang++
 finish-args:
   - --share=ipc
-  - --socket=x11
+  - --socket=fallback-x11
   - --socket=wayland
   - --share=network
   - --device=all
@@ -35,6 +35,7 @@ finish-args:
   - --filesystem=~/.var/app/io.github.softfever.OrcaSlicer:ro
   - --system-talk-name=org.freedesktop.UDisks2
   - --env=SPNAV_SOCKET=/run/spnav.sock
+  - --env=WEBKIT_DISABLE_DMABUF_RENDERER=1
 
 cleanup:
   - /include
