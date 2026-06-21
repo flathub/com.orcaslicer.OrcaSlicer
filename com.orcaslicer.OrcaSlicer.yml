@@ -145,13 +145,11 @@ modules:
       - -DDESTDIR=/app
     sources:
       # OrcaSlicer source tree (provides deps/ cmake files, patches, bundled sources)
-      # Pinned to main @ 3ffb9585 = v2.4.0-beta plus the flatpak legacy-config
-      # migration fix (migrate from io.github.softfever.OrcaSlicer); no release
-      # tag contains that fix yet, so this is pinned by commit.
+      # Pinned to release/v2.4 @ f9693c4c which contains flatpak related fix
       - &orcaslicer-git
         type: git
         url: https://github.com/OrcaSlicer/OrcaSlicer.git
-        commit: 3ffb9585d2a9b97da53fdf6b305cbc5f4eb22b3b
+        commit: f9693c4c967b93f2c483ae0dd32e0545221913ff
 
       # ---------------------------------------------------------------
       # Pre-downloaded dependency archives
