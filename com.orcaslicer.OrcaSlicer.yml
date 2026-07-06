@@ -145,11 +145,11 @@ modules:
       - -DDESTDIR=/app
     sources:
       # OrcaSlicer source tree (provides deps/ cmake files, patches, bundled sources)
-      # Pinned to release/v2.4 @ d3405cf which marks 2.4.2 as stable in the metainfo
+      # Pinned to release/v2.4 @ 8500fcd which marks 2.4.2 as stable in the metainfo
       - &orcaslicer-git
         type: git
         url: https://github.com/OrcaSlicer/OrcaSlicer.git
-        commit: d3405cf4614959aa8be6a9978fa8465073621028
+        commit: 8500fcdccaa10b5099ac20d252af3a7c560046f1
 
       # ---------------------------------------------------------------
       # Pre-downloaded dependency archives
