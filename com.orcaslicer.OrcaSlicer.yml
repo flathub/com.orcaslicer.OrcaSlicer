@@ -147,12 +147,12 @@ modules:
       - /libpython/include
     sources:
       # OrcaSlicer source tree (provides deps/ cmake files, patches, bundled sources)
-      # Pinned to release/v2.5.0 @ 325fe34, the 2.5.0 release, which marks
+      # Pinned to release/v2.5.0 @ 40ecc66, the 2.5.0 release, which marks
       # 2.5.0 as stable in the metainfo.
       - &orcaslicer-git
         type: git
         url: https://github.com/OrcaSlicer/OrcaSlicer.git
-        commit: 325fe348a63d846cf737e9394a583a60711efc31
+        commit: 40ecc66f78ed72dc368e0c1ebe40d77f00cc8a19
 
       # ---------------------------------------------------------------
       # Pre-downloaded dependency archives
