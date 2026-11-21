@@ -119,11 +119,14 @@ modules:
     sources:
       # Use git instead of archive: wxWidgets 3.3 relies on multiple git
       # submodules (PCRE2, etc.) that are not included in GitHub tarballs.
-      # v3.3.2 branch @ b44c39c (Wayland seat release fix). No tag exists for
-      # it, and Flathub's linter rejects `branch:`, so pin by commit only.
+      # v3.3.2 branch @ b44c39c (Wayland seat release fix). Flathub's linter
+      # rejects `branch:`, so pin by commit only. The branch has moved past
+      # this commit, so clone in full: git needs the history to check out a
+      # commit that is not a branch tip.
       - type: git
         url: https://github.com/OrcaSlicer/Orca-deps-wxWidgets.git
         commit: b44c39c100975a0ac0e46f937aa3f3eae5e18631
+        disable-shallow-clone: true
 
   # OrcaSlicer dependency libraries (ExternalProject-based, installed to /app)
   - name: OrcaSlicer-deps
@@ -147,12 +150,12 @@ modules:
       - /libpython/include
     sources:
       # OrcaSlicer source tree (provides deps/ cmake files, patches, bundled sources)
-      # Pinned to release/v2.5.1 @ eef7710, the 2.5.1 release, which marks
-      # 2.5.1 as stable in the metainfo.
+      # Pinned to release/v2.5.2 @ f92a7c0, the 2.5.2 release, which marks
+      # 2.5.2 as stable in the metainfo.
       - &orcaslicer-git
         type: git
         url: https://github.com/OrcaSlicer/OrcaSlicer.git
-        commit: eef7710cb102fdb51a9bcdbd9efd61047f44774a
+        commit: f92a7c065c5718b8ef1baac1cd704df2911238f4
 
       # ---------------------------------------------------------------
       # Pre-downloaded dependency archives
